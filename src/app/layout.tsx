@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import { ReactQueryProvider } from "@/components/ReactQueryProvider";
-import { WalletProvider } from "@/components/WalletProvider";
 import { Toaster } from "@/components/ui/toaster";
-import { WrongNetworkAlert } from "@/components/WrongNetworkAlert";
-
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -23,13 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <WalletProvider>
-          <ReactQueryProvider>
-            <div id="root">{children}</div>
-            <WrongNetworkAlert />
-            <Toaster />
-          </ReactQueryProvider>
-        </WalletProvider>
+          <div id="root">{children}</div>
+          <Toaster />
       </body>
     </html>
   );
